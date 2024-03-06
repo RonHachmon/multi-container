@@ -1,13 +1,13 @@
 version: "3"
 services:
   nginx:
-    image: 'rallycoding/multi-nginx'
+    image: 'ronhachmon/multi-nginx'
     ports:
       - "80:80"
     mem_limit : 128m
     hostname: nginx
   api:
-    image: 'rallycoding/multi-server'
+    image: 'ronhachmon/multi-server'
     hostname: api
     mem_limit : 128m
     environment:
@@ -19,11 +19,11 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   client:
-    image: 'rallycoding/multi-client'
+    image: 'ronhachmon/multi-client'
     mem_limit : 128m
     hostname: client
   worker:
-    image: 'rallycoding/multi-worker'
+    image: 'ronhachmon/multi-worker'
     mem_limit : 128m
     hostname: client
     environment:

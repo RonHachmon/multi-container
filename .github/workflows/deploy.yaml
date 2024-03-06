@@ -20,17 +20,17 @@ jobs:
 
       - name: Build images
         run: |
-          docker build -t rallycoding/multi-client ./client
-          docker build -t rallycoding/multi-nginx ./nginx
-          docker build -t rallycoding/multi-server ./server
-          docker build -t rallycoding/multi-worker ./worker
+          docker build -t ronhachmon/multi-client ./client
+          docker build -t ronhachmon/multi-nginx ./nginx
+          docker build -t ronhachmon/multi-server ./server
+          docker build -t ronhachmon/multi-worker ./worker
 
       - name: Push images to Hub
         run: |
-          docker push rallycoding/multi-client
-          docker push rallycoding/multi-nginx
-          docker push rallycoding/multi-server
-          docker push rallycoding/multi-worker
+          docker push ronhachmon/multi-client
+          docker push ronhachmon/multi-nginx
+          docker push ronhachmon/multi-server
+          docker push ronhachmon/multi-worker
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
