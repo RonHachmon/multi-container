@@ -10,6 +10,7 @@ services:
     image: 'ronhachmon/multi-server'
     hostname: api
     mem_limit : 128m
+    restart : on-failure
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
