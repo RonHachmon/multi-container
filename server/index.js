@@ -28,6 +28,10 @@ pgClient.on('connect', (client) => {
     .query('CREATE TABLE IF NOT EXISTS values (number INT)')
     .catch((err) => console.error(err));
 });
+pgClient.on('error', err => {
+  console.log("PG error "+ err)
+
+});
 
 // Redis Client Setup
 const redis = require('redis');
@@ -71,5 +75,5 @@ app.post('/values', async (req, res) => {
 });
 
 app.listen(5000, (err) => {
-  console.log('Listening');
+  console.log('Listening momo API port 5000');
 });
